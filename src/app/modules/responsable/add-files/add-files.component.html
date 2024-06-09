@@ -1,0 +1,31 @@
+<div class="card">
+    <div class="card-header">
+        {{pageTitle}}
+    </div>
+    <div class="card-body">
+        <div class="container-fluid">
+            <h2>File upload form</h2>
+            <form [formGroup]="fileForm">
+                <div class="form-group">
+                    <label for="myFile">File:</label>
+                    <input type="file" class="form-control" (change)="handleFileInput($event)" name="file"
+                        accept=".pdf">
+                    <mat-error *ngIf="errorFile != ''"> {{errorFile}} </mat-error>
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Description:</label>
+                    <input type="text" class="form-control" formControlName="description"
+                        placeholder="Enter description" name="description">
+                    <mat-error *ngIf="errorDescription != ''"> {{errorDescription}} </mat-error>
+
+                </div>
+                <br />
+                <div class="box">
+                    <button class="btn btn-outline-primary" color="primary"
+                        (click)="saveFileInfo($event)">UPLOAD</button>
+                    <button class="btn btn-outline-danger" mat-dialog-close>CANCEL</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

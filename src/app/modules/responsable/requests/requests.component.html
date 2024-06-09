@@ -1,0 +1,36 @@
+<div class="table-wrapper-scroll-y my-custom-scrollbar">
+
+    <table class="table table-bordered  mb-0 table-scrollable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>date time</th>
+                <th>personal name</th>
+                <th>description</th>
+                <th>state</th>
+                <th>Type</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let request of requests">
+                <td>{{request.id}}</td>
+                <td>{{request.date}}</td>
+                <td>{{request.employeeName}}</td>
+                <td>{{request.description}}</td>
+                <td>{{request.etat}}</td>
+                <td>{{request.type | typeDemandeNamePipe }}</td>
+                <td>
+                    <div class="box">
+                        <input *ngIf="request.etat == 'En Cours'" type="button" class="btn btn-outline-success"
+                            (click)="addFile(request.id)" value="Add document" />
+                        <input *ngIf="request.etat == 'Validée'" type="button" class="btn btn-outline-success"
+                            (click)="addQr(request.fileId)" value="Add QR code" />
+                        <input *ngIf="request.etat == 'En Cours'" type="button" class="btn btn-outline-danger"
+                            (click)="refuser(request.id)" value="Refuse request" />
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

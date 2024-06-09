@@ -1,0 +1,43 @@
+<div class="container">
+  <h4 mat-dialog-title>Add new User</h4>
+
+  <form [formGroup]="NewUser" (ngSubmit)="AddNewUser(NewUser)">
+    <mat-form-field appearance="standard">
+      <mat-label>Last name</mat-label>
+      <input matInput name="Nom" class="form-control" formControlName="Nom" autocomplete="off" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="standard">
+      <mat-label>First name</mat-label>
+      <input matInput name="Prenom" class="form-control" formControlName="Prenom" autocomplete="off" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="standard">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" name="Email" class="form-control" formControlName="Email" autocomplete="off" email
+        required pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$">
+    </mat-form-field>
+
+    <mat-form-field appearance="standard">
+      <mat-label>Passowrd</mat-label>
+      <input matInput type="password" name="Motpasse" class="form-control" formControlName="Motpasse" autocomplete="off"
+        required>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="fill">
+      <mat-label>Role</mat-label>
+      <select matNativeControl name="Role" class="form-control" formControlName="Role" required>
+        <option [ngValue]=1>Personal Manager</option>
+        <option [ngValue]=2>Personal</option>
+      </select>
+    </mat-form-field>
+
+
+    <mat-error *ngIf="error!= ''">{{error}}</mat-error>
+    <mat-dialog-actions>
+      <button mat-button color="primary" type="submit" [disabled]="!NewUser.valid">SUBMIT</button>
+      <button mat-button mat-dialog-close>CANCEL</button>
+    </mat-dialog-actions>
+  </form>
+</div>

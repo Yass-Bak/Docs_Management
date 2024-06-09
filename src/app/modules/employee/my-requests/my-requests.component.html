@@ -1,0 +1,32 @@
+<div class="table-wrapper-scroll-y my-custom-scrollbar">
+
+    <table class="table table-bordered  mb-0 table-scrollable">
+        <thead color="green">
+            <tr>
+                <th>ID</th>
+                <th>date time</th>
+                <th>description</th>
+                <th>state</th>
+                <th>Type</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let request of userRequests">
+                <td>{{request.id}}</td>
+                <td>{{request.date}}</td>
+                <td>{{request.description}}</td>
+                <td>{{request.etat}}</td>
+                <td>{{request.type | typeDemandeNamePipe}}</td>
+                <td>
+                    <button mat-icon-button class="btn btn-outline-success" mat-raised-button>
+                        <mat-icon class="download" *ngIf="request.fileQrId != 0" (click)="downloadFile(request.fileId)">
+                            download</mat-icon>
+                    </button>
+                </td>
+
+
+            </tr>
+        </tbody>
+    </table>
+</div>
