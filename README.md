@@ -1,4 +1,4 @@
-# Angular 13 Example Lazy Loading
+# GESTION DES DOCUMENTS ADMINISTRATIFS AVEC L'ACCORDATION D'UN QR CODE UNIQUE À CHACUN 
 
 <table>
 <tr>
@@ -83,18 +83,7 @@ Here is a step by step Tutorial :  https://www.ganatan.com/tutorials/lazy-loadin
 * `npm run test`
 
 # [Author](#author)
-* Author  : danny
-
-## [English Tutorials](#english-tutorials)
-- Installation - https://www.ganatan.com/tutorials/lazy-loading-with-angular
-- step-by-step Tutorials - https://www.ganatan.com/tutorials/en
-
-## [Tutoriels en français](#french-tutorials)
-- Installation - https://www.ganatan.com/tutorials/lazy-loading-avec-angular
-- Tutoriels Etape par étape - https://www.ganatan.com/tutorials
-
-
-
-
-
+* Author  : Yassine BAKLOUTI
+#PS:
+- this project contains Two branches (Back-Front)
 "# Docs_Management" 
